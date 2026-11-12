@@ -8,7 +8,7 @@
 <!-- 零外部資源：不載入任何 CDN 字體／圖庫／框架，字型一律使用系統字體棧 -->
 <style>
 :root{
-  --bg:#0D0F12; --surface:#16191D; --line:#242A31; --line-soft:#1F242A;
+  --bg:#0D0F12; --surface:#16191D; --line:#242A31; --line-soft:#1F242A; --line-2:#2C333B;
   --txt:#E9EBEE; --mut:#9BA1A9; --dim:#6A7178;
   --acc:#4ADE80; --pr:#FBBF24;
   --mono:ui-monospace,"SF Mono","Cascadia Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
@@ -98,13 +98,15 @@ section{margin-bottom:46px}
 /* ---------- tables ---------- */
 .tbl{width:100%;border-collapse:collapse;font-size:13.5px}
 .tbl th{font-size:11.5px;font-weight:600;color:var(--dim);text-align:left;letter-spacing:.03em;
-  padding:9px 14px;box-shadow:inset 0 -1px 0 var(--line);white-space:nowrap}
-.tbl td{padding:0 14px;height:40px;box-shadow:inset 0 -1px 0 var(--line-soft);vertical-align:middle}
+  padding:9px 14px;box-shadow:inset 0 -1px 0 var(--line-2);white-space:nowrap}
+.tbl td{padding:0 14px;height:40px;box-shadow:inset 0 -1px 0 var(--line-2);vertical-align:middle}
 .tbl th:first-child{padding-left:18px}
 .tbl td:first-child{padding-left:18px}
 .tbl th:last-child,.tbl td:last-child{padding-right:18px}
 .tbl tbody tr:last-child td{box-shadow:none}
-.tbl tbody tr:hover td{background:rgba(255,255,255,.028)}
+/* 極淡斑馬紋：50+ 行長表格靠它穩住視線，灰階、低對比、不搶重量數字 */
+.tbl tbody tr:nth-child(even) td{background:rgba(255,255,255,.032)}
+.tbl tbody tr:hover td{background:rgba(255,255,255,.06)}
 .c-mode{max-width:250px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .note{padding:11px 18px 13px;font-size:12px;color:var(--dim);
   border-top:1px solid var(--line-soft);line-height:1.55}
@@ -118,28 +120,32 @@ section{margin-bottom:46px}
 
 /* ---------- equipment grouped tables ---------- */
 .eqtbl{table-layout:fixed;min-width:840px}
-.eqtbl .k1{width:40%} .eqtbl .k2{width:20%} .eqtbl .k3{width:10%}
-.eqtbl .k4{width:11%} .eqtbl .k5{width:19%}
+/* 所有表格一律六欄、欄寬全站一致：重量欄的左右界不因是否顯示次數而位移 */
+.eqtbl .k1{width:38%} .eqtbl .k2{width:17%} .eqtbl .kr{width:9%}
+.eqtbl .k3{width:10%} .eqtbl .k4{width:11%} .eqtbl .k5{width:15%}
 .eqtbl+.eqtbl{margin-top:14px}
-.eqtbl+.eqtbl th{box-shadow:inset 0 -1px 0 var(--line),inset 0 1px 0 var(--line)}
+.eqtbl+.eqtbl th{box-shadow:inset 0 -1px 0 var(--line-2),inset 0 1px 0 var(--line-2)}
 .grp+.grp{border-top:1px solid var(--line)}
 .grp-h{padding:15px 18px 7px}
 .grp-h h3{font-size:14.5px;font-weight:600}
 .c-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .nb{font-size:14px;font-weight:600}
 .ns{font-size:12px;color:var(--dim);font-weight:400;margin-left:7px}
+/* 重量單獨一格：格內只有數字，右緣等於欄頭右緣，不受 ×N 寬度影響 */
 .c-val{text-align:right;white-space:nowrap}
 .w{font-family:var(--mono);font-size:30px;font-weight:700;letter-spacing:-.03em;line-height:1;
   font-variant-numeric:tabular-nums;-webkit-font-feature-settings:"tnum"}
-.wr{display:inline-block;width:44px;text-align:left;font-family:var(--mono);font-size:12px;
-  color:var(--dim);margin-left:6px;font-variant-numeric:tabular-nums}
+/* ×N 另置一欄：固定欄寬，與重量完全解耦 */
+.c-reps{white-space:nowrap}
+.wr{font-family:var(--mono);font-size:12.5px;color:var(--dim);
+  font-variant-numeric:tabular-nums;-webkit-font-feature-settings:"tnum"}
 .c-delta{text-align:right;white-space:nowrap}
 .dl{font-family:var(--mono);font-size:13px;color:var(--dim);
   font-variant-numeric:tabular-nums;-webkit-font-feature-settings:"tnum"}
 .dl.up{color:var(--acc);font-weight:600}
 .c-date{font-family:var(--mono);font-size:12.5px;color:var(--mut);white-space:nowrap;
   font-variant-numeric:tabular-nums;-webkit-font-feature-settings:"tnum"}
-.c-spark{color:var(--dim)}
+.c-spark{color:var(--mut)}
 .c-spark svg{display:block}
 
 /* ---------- trend ---------- */
@@ -147,14 +153,15 @@ section{margin-bottom:46px}
 .sel{font-family:inherit;font-size:13.5px;color:var(--txt);background:var(--bg);
   border:1px solid var(--line);border-radius:8px;padding:8px 10px;max-width:100%}
 .sel option{background:#16191D;color:#E9EBEE}
-.t-wrap{padding:14px 18px 18px;overflow-x:auto}
-.t-meta{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:12px;
+.t-wrap{padding:12px 18px 16px;overflow-x:auto}
+.t-meta{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:10px;
   font-size:13px;color:var(--mut)}
 .t-name{font-size:15px;font-weight:600;color:var(--txt)}
 .t-k{font-family:var(--mono);font-size:12.5px;
   font-variant-numeric:tabular-nums;-webkit-font-feature-settings:"tnum"}
 .t-k b{font-weight:700;color:var(--txt)}
-.chart{display:block;width:100%;min-width:520px;height:auto}
+/* 緊湊版趨勢圖：資料只有 1–2 個點，不佔半屏高度 */
+.chart{display:block;width:100%;min-width:460px;height:auto}
 .chart .gl{stroke:rgba(255,255,255,.06);stroke-width:1}
 .chart .ln{fill:none;stroke:var(--acc);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .chart .pt{fill:var(--surface);stroke:var(--acc);stroke-width:2.2}
@@ -175,8 +182,8 @@ footer code{color:var(--mut);background:rgba(255,255,255,.05);padding:1px 6px;bo
 /* 窄螢幕：隱藏微圖欄、縮小名稱欄，讓「名稱＋當前重量」不捲動就看得到 */
 @media (max-width:600px){
   .eqtbl{min-width:560px}
-  .eqtbl .k1{width:32%} .eqtbl .k2{width:30%} .eqtbl .k3{width:17%}
-  .eqtbl .k4{width:21%} .eqtbl .k5{width:0}
+  .eqtbl .k1{width:30%} .eqtbl .k2{width:26%} .eqtbl .kr{width:12%}
+  .eqtbl .k3{width:13%} .eqtbl .k4{width:19%} .eqtbl .k5{width:0}
   .eqtbl th:last-child,.eqtbl td:last-child{display:none}
 }
 @media (max-width:560px){
@@ -277,7 +284,7 @@ footer code{color:var(--mut);background:rgba(255,255,255,.05);padding:1px 6px;bo
   <section>
     <div class="sec-head">
       <h2>重量趨勢</h2>
-      <span class="sec-note">只列兩堂以上的動作；單機獨立級距，不跨機比較</span>
+      <span class="sec-note">只列兩堂以上的動作（資料累積中，多數僅 1–2 個點）；單機獨立級距，不跨機比較</span>
     </div>
     <div class="block">
       <div class="tt"><select class="sel" id="trendSel" aria-label="選擇設備"></select></div>
@@ -393,13 +400,20 @@ function spark(pts) {
   if (min === max) { min -= 1; max += 1; }
   const px = i => pts.length === 1 ? W / 2 : 4 + i * (W - 8) / (pts.length - 1);
   const py = v => H - 6 - (v - min) / (max - min) * (H - 12);
-  if (pts.length === 1)
+  /* 只有一個點：畫一段水平短線＋中心點，標示「單次紀錄、尚無趨勢」，不是孤點 */
+  if (pts.length === 1) {
+    const y = py(vals[0]).toFixed(1);
     return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" aria-hidden="true">
-      <circle cx="${px(0)}" cy="${py(vals[0]).toFixed(1)}" r="3" fill="currentColor"/></svg>`;
+      <line x1="${W / 2 - 17}" y1="${y}" x2="${W / 2 + 17}" y2="${y}"
+            stroke="currentColor" stroke-width="1.8" stroke-linecap="round" opacity=".5"/>
+      <circle cx="${W / 2}" cy="${y}" r="2.8" fill="currentColor" opacity=".85"/></svg>`;
+  }
   const d = pts.map((p, i) => `${i ? "L" : "M"}${px(i).toFixed(1)},${py(p.value).toFixed(1)}`).join("");
+  const ex = px(pts.length - 1).toFixed(1), ey = py(vals[vals.length - 1]).toFixed(1);
   return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" aria-hidden="true">
-    <path d="${d}" fill="none" stroke="currentColor" stroke-width="1.6"
-          stroke-linecap="round" stroke-linejoin="round" opacity=".6"/></svg>`;
+    <path d="${d}" fill="none" stroke="currentColor" stroke-width="1.9"
+          stroke-linecap="round" stroke-linejoin="round" opacity=".95"/>
+    <circle cx="${ex}" cy="${ey}" r="2.7" fill="currentColor" opacity=".95"/></svg>`;
 }
 function deltaHtml(e) {
   if (e.delta == null) return `<span class="dl" title="僅一次紀錄">-</span>`;
@@ -412,7 +426,8 @@ function rowHtml(e) {
   const rp = e.kind === "weight" && last && last.reps ? `×${last.reps}` : "";
   return `<tr>
     <td class="c-name" title="${esc(e.name)}"><span class="nb">${esc(e.base)}</span><span class="ns">${esc(e.sub)}</span></td>
-    <td class="c-val"><span class="w">${num(e.current)}</span><span class="wr">${rp}</span></td>
+    <td class="c-val"><span class="w">${num(e.current)}</span></td>
+    <td class="c-reps">${rp ? `<span class="wr">${rp}</span>` : ""}</td>
     <td class="c-delta">${deltaHtml(e)}</td>
     <td class="c-date">${md(e.last_date || e.date)}</td>
     <td class="c-spark">${spark(e.points)}</td>
@@ -422,12 +437,18 @@ function grpHtml(sec, items) {
   const units = [...new Set(items.map(e => e.unit || "-"))]
     .sort((a, b) => (UORD[a] ?? 9) - (UORD[b] ?? 9));
   const tables = units.map(u => {
-    const rows = items.filter(e => (e.unit || "-") === u).map(rowHtml).join("");
+    const list = items.filter(e => (e.unit || "-") === u);
+    /* 次數欄一律存在（欄寬固定），只有重量類資料才填內容、才標欄頭，
+       這樣 50 列重量的欄位幾何完全一致，右緣不會因 ×N 而位移 */
+    const hasR = list.some(e => e.kind === "weight" &&
+      e.points.length && e.points[e.points.length - 1] && e.points[e.points.length - 1].reps);
+    const rows = list.map(rowHtml).join("");
     return `<table class="tbl eqtbl">
-      <colgroup><col class="k1"><col class="k2"><col class="k3"><col class="k4"><col class="k5"></colgroup>
+      <colgroup><col class="k1"><col class="k2"><col class="kr"><col class="k3"><col class="k4"><col class="k5"></colgroup>
       <thead><tr>
         <th>設備</th>
         <th class="ra">${QTY[u] || "數值"} ${esc(u)}</th>
+        <th>${hasR ? "次數" : ""}</th>
         <th class="ra">增減</th>
         <th>上次</th>
         <th>趨勢</th>
@@ -497,7 +518,7 @@ let trendId = null;
 function trendCandidates() { return DATA.equipment.filter(e => e.points.length >= 2); }
 function trendChart(e) {
   const pts = e.points, n = pts.length;
-  const W = 880, H = 300, L = 54, R = 18, T = 32, B = 42;
+  const W = 880, H = 160, L = 54, R = 18, T = 24, B = 34;
   const vals = pts.map(p => p.value);
   let min = Math.min(...vals), max = Math.max(...vals);
   const pad = Math.max((max - min) * 0.18, 1);
