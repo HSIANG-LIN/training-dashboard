@@ -4,22 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>訓練紀錄 Dashboard</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<!-- 零外部資源：不載入任何 CDN 字體／圖庫，字型一律使用系統字體棧 -->
 <style>
 :root{
   --bg:#070A11; --card:#0E131E; --card2:#111827; --line:rgba(255,255,255,.07);
   --txt:#E9EEF8; --mut:#8B95AC; --dim:#5C6680;
   --sky:#38BDF8; --violet:#A78BFA; --lime:#A3E635;
   --up:#4ADE80; --down:#F87171; --amber:#FBBF24;
-  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --mono:ui-monospace,"SF Mono","Cascadia Mono",SFMono-Regular,Menlo,Consolas,monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
   background:var(--bg);color:var(--txt);
-  font-family:"Inter","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Microsoft JhengHei","Noto Sans TC",system-ui,sans-serif;
   font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
@@ -35,7 +33,7 @@ body{
 .hero{margin-bottom:56px}
 .overline{font-family:var(--mono);font-size:12px;letter-spacing:.35em;color:var(--sky);
   text-transform:uppercase;margin-bottom:14px}
-.hero h1{font-family:"Sora",sans-serif;font-size:clamp(34px,5vw,54px);font-weight:700;
+.hero h1{font-family:"PingFang TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;font-size:clamp(34px,5vw,54px);font-weight:700;
   letter-spacing:-.02em;line-height:1.12}
 .hero h1 .grad{background:linear-gradient(92deg,var(--sky),var(--violet) 60%,var(--lime));
   -webkit-background-clip:text;background-clip:text;color:transparent}
@@ -55,7 +53,7 @@ section{margin-bottom:64px}
 .sec-head{display:flex;gap:18px;align-items:baseline;margin-bottom:24px}
 .sec-no{font-family:var(--mono);font-size:13px;color:var(--dim);
   border:1px solid var(--line);border-radius:8px;padding:3px 9px;flex:none;transform:translateY(-4px)}
-.sec-head h2{font-family:"Sora",sans-serif;font-size:23px;font-weight:600;letter-spacing:-.01em}
+.sec-head h2{font-family:"PingFang TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;font-size:23px;font-weight:600;letter-spacing:-.01em}
 .sec-desc{color:var(--mut);font-size:13.5px;margin-top:4px}
 .sec-body{background:rgba(255,255,255,.018);border:1px solid var(--line);
   border-radius:20px;padding:26px}
@@ -91,10 +89,35 @@ section{margin-bottom:64px}
 .legend i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:6px;vertical-align:-1px}
 
 /* ---------- equipment ---------- */
+.eq-tools{display:flex;flex-direction:column;gap:14px;margin-bottom:22px}
+.eq-search{
+  width:100%;max-width:440px;padding:11px 15px;border-radius:11px;font:inherit;font-size:14px;
+  background:var(--card);border:1px solid var(--line);color:var(--txt);outline:none;transition:.2s;
+}
+.eq-search::placeholder{color:var(--dim)}
+.eq-search:focus{border-color:rgba(56,189,248,.55);box-shadow:0 0 0 3px rgba(56,189,248,.13)}
+.eq-count{font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+.eq-count b{color:var(--sky);font-weight:700}
+.eq-group{margin-bottom:36px}
+.eq-group:last-child{margin-bottom:0}
+.eq-group-head{
+  display:flex;align-items:center;gap:11px;margin-bottom:14px;padding-bottom:11px;
+  border-bottom:1px solid var(--line);
+}
+.eq-group-head h3{font-size:17px;font-weight:700;letter-spacing:.02em;display:flex;align-items:center;gap:9px}
+.eq-group-head .gd{width:9px;height:9px;border-radius:50%;flex:none;box-shadow:0 0 10px currentColor}
+.eq-group-head .gcount{
+  font-family:var(--mono);font-size:11.5px;color:var(--mut);
+  background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:99px;padding:3px 10px;
+}
+.eq-group-head .gunit{font-family:var(--mono);font-size:11.5px;color:var(--dim)}
 .chips{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:20px}
+.eq-tools .chips{margin-bottom:0}
 .chip{font-size:13px;padding:6px 15px;border-radius:99px;border:1px solid var(--line);
   background:rgba(255,255,255,.03);color:var(--mut);cursor:pointer;transition:.2s;user-select:none}
 .chip:hover{border-color:rgba(56,189,248,.5);color:var(--txt)}
+.chip b{font-family:var(--mono);font-size:11px;font-weight:600;opacity:.6;margin-left:6px}
+.chip.on b{opacity:.85}
 .chip.on{background:linear-gradient(92deg,rgba(56,189,248,.2),rgba(167,139,250,.2));
   border-color:rgba(56,189,248,.6);color:#fff}
 .eq-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:16px}
@@ -106,8 +129,8 @@ section{margin-bottom:64px}
 .eq-sec{font-size:11px;font-family:var(--mono);color:var(--sky);
   background:rgba(56,189,248,.1);border-radius:6px;padding:2px 8px;letter-spacing:.05em}
 .eq-date{font-family:var(--mono);font-size:11.5px;color:var(--dim)}
-.eq-name{font-family:"Sora",sans-serif;font-weight:600;font-size:15.5px;margin-top:12px;line-height:1.35}
-.eq-sub{display:block;font-family:"Inter",sans-serif;font-weight:400;font-size:11.5px;
+.eq-name{font-family:"PingFang TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;font-weight:600;font-size:15.5px;margin-top:12px;line-height:1.35}
+.eq-sub{display:block;font-family:inherit;font-weight:400;font-size:11.5px;
   color:var(--dim);margin-top:3px;line-height:1.4}
 .eq-val{display:flex;align-items:baseline;gap:8px;margin-top:12px;flex-wrap:wrap}
 .eq-num{font-family:var(--mono);font-weight:700;font-size:32px;letter-spacing:-.03em}
@@ -160,7 +183,7 @@ section{margin-bottom:64px}
 .trend-svg .ptval{fill:var(--txt);font-family:var(--mono);font-size:11.5px;font-weight:700;opacity:0;transition:opacity .4s .9s}
 .trend-svg.on .ptval{opacity:1}
 .trend-meta{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:16px}
-.trend-title{font-family:"Sora",sans-serif;font-size:17px;font-weight:600}
+.trend-title{font-family:"PingFang TC","Microsoft JhengHei",-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;font-size:17px;font-weight:600}
 .trend-tag{font-family:var(--mono);font-size:12px;color:var(--mut);
   background:rgba(255,255,255,.05);padding:3px 10px;border-radius:99px}
 .trend-delta{font-family:var(--mono);font-size:13px;font-weight:700}
@@ -195,9 +218,13 @@ footer code{background:rgba(255,255,255,.06);padding:2px 8px;border-radius:6px;c
 .reveal.in{opacity:1;transform:none}
 @media (max-width:860px){
   .week{grid-template-columns:repeat(2,1fr)}
-  .bars{height:210px}
+  .bars{height:auto;flex-wrap:wrap;gap:16px 8px;align-items:flex-end}
+  .bargroup{flex:1 1 118px;height:214px}
+  .barpair{height:calc(100% - 56px)}
   .wrap{padding:32px 16px 60px}
 }
+/* 窄螢幕：長條圖可換行、表格改為水平捲動，避免整頁被裁切 */
+.sec-body{overflow-x:auto}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
@@ -240,8 +267,13 @@ footer code{background:rgba(255,255,255,.06);padding:2px 8px;border-radius:6px;c
       <div><h2>設備總覽</h2>
         <div class="sec-desc">每台機器目前的工作重量（最新一次最重組）、上次訓練與增減 — 各機級距不同，進階曲線皆以單機尺度繪製</div></div>
     </div>
-    <div class="chips reveal" id="eqChips"></div>
-    <div class="eq-grid" id="eqGrid"></div>
+    <div class="eq-tools">
+      <input class="eq-search" id="eqSearch" type="search" autocomplete="off"
+             placeholder="搜尋設備：腿蹬、Leg Press、背部、kg…" aria-label="搜尋設備" />
+      <div class="chips" id="eqChips"></div>
+      <div class="eq-count" id="eqCount"></div>
+    </div>
+    <div id="eqGrid"></div>
   </section>
 
   <section id="sec-bars">
@@ -347,15 +379,25 @@ $("#week").innerHTML = DATA.schedule.map(d => {
 
 /* ---------- equipment ---------- */
 let eqFilter = "全部";
-const secs = ["全部", ...new Set(DATA.equipment.map(e => e.section))];
+let eqQuery = "";
+const secs = ["全部", ...(DATA.sections && DATA.sections.length
+  ? DATA.sections : [...new Set(DATA.equipment.map(e => e.section))])];
+const SEC_C = {"胸部":"#F87171","背部":"#60A5FA","腿部":"#A78BFA",
+               "肩部":"#FBBF24","手臂":"#4ADE80","核心":"#22D3EE"};
+const secCount = s => s === "全部" ? DATA.equipment.length
+  : DATA.equipment.filter(e => e.section === s).length;
 $("#eqChips").innerHTML = secs.map(s =>
-  `<span class="chip ${s === eqFilter ? "on" : ""}" data-s="${s}">${s}</span>`).join("");
+  `<span class="chip ${s === eqFilter ? "on" : ""}" data-s="${esc(s)}">${esc(s)}<b>${secCount(s)}</b></span>`).join("");
 $("#eqChips").addEventListener("click", ev => {
   const c = ev.target.closest(".chip");
   if (!c) return;
   eqFilter = c.dataset.s;
   document.querySelectorAll("#eqChips .chip").forEach(x =>
     x.classList.toggle("on", x.dataset.s === eqFilter));
+  renderEq();
+});
+$("#eqSearch").addEventListener("input", ev => {
+  eqQuery = ev.target.value;
   renderEq();
 });
 function sparkline(pts, w, h) {
@@ -383,19 +425,48 @@ function deltaHtml(e) {
   const up = e.delta > 0;
   return `<span class="delta ${up ? "up" : "down"}">${up ? "▲" : "▼"} ${up ? "+" : ""}${fmt(e.delta)} ${e.unit}</span>`;
 }
-function renderEq() {
-  const list = DATA.equipment.filter(e => eqFilter === "全部" || e.section === eqFilter);
-  $("#eqGrid").innerHTML = list.map((e, i) => {
-    const prev = e.prev ? `上次 ${fmt(e.prev.value)} ${e.prev.unit}（${md(e.prev.date)}）` : "尚無前次紀錄";
-    const reps = e.kind === "weight" && e.reps ? `<span class="eq-reps">× ${e.reps} 下</span>` : "";
-    return `<div class="eq reveal" style="transition-delay:${(i % 8) * 60}ms">
-      <div class="eq-top"><span class="eq-sec">${e.section}</span><span class="eq-date">${md(e.last_date)}</span></div>
+function eqCard(e, i) {
+  const prev = e.prev ? `上次 ${fmt(e.prev.value)} ${e.prev.unit}（${md(e.prev.date)}）` : "尚無前次紀錄";
+  const reps = e.kind === "weight" && e.reps ? `<span class="eq-reps">× ${e.reps} 下</span>` : "";
+  return `<div class="eq reveal" style="transition-delay:${(i % 8) * 60}ms">
+      <div class="eq-top"><span class="eq-sec">${esc(e.section)}</span><span class="eq-date">${e.last_date ? md(e.last_date) : "—"}</span></div>
       <div class="eq-name">${esc(e.base)}<span class="eq-sub">${esc(e.sub) || "&nbsp;"}</span></div>
-      <div class="eq-val"><span class="eq-num">${fmt(e.current)}</span><span class="eq-unit">${e.unit}</span>${reps}${deltaHtml(e)}</div>
-      <div class="eq-meta">${prev} · ${e.sessions} 堂紀錄</div>
+      <div class="eq-val"><span class="eq-num">${fmt(e.current)}</span><span class="eq-unit">${esc(e.unit) || ""}</span>${reps}${deltaHtml(e)}</div>
+      <div class="eq-meta">${esc(prev)} · ${e.sessions || 0} 堂紀錄</div>
       ${sparkline(e.points, 240, 56)}
     </div>`;
-  }).join("") || `<div class="empty">此部位尚無紀錄</div>`;
+}
+function renderEq() {
+  const q = eqQuery.trim().toLowerCase();
+  const hit = e => !q ||
+    (e.name + " " + e.base + " " + e.sub + " " + e.section + " " + e.unit + " " + e.kind)
+      .toLowerCase().includes(q);
+  const list = DATA.equipment.filter(e =>
+    (eqFilter === "全部" || e.section === eqFilter) && hit(e));
+  $("#eqCount").innerHTML = `顯示 <b>${list.length}</b> / ${DATA.equipment.length} 台設備` +
+    (q ? `（關鍵字：${esc(eqQuery.trim())}）` : "") +
+    (eqFilter !== "全部" ? `（部位：${esc(eqFilter)}）` : "");
+  if (!list.length) {
+    $("#eqGrid").innerHTML = `<div class="empty">找不到符合的設備</div>`;
+    return;
+  }
+  const groups = secs.slice(1)
+    .map(s => ({ name: s, items: list.filter(e => e.section === s) }))
+    .filter(g => g.items.length);
+  $("#eqGrid").innerHTML = groups.map(g => {
+    const color = SEC_C[g.name] || "#38BDF8";
+    const units = {};
+    g.items.forEach(e => { const u = e.unit || "?"; units[u] = (units[u] || 0) + 1; });
+    const unitTxt = Object.keys(units).map(u => `${u} ${units[u]}`).join(" · ");
+    return `<div class="eq-group">
+      <div class="eq-group-head">
+        <h3><span class="gd" style="background:${color};color:${color}"></span>${esc(g.name)}</h3>
+        <span class="gcount">${g.items.length} 台</span>
+        <span class="gunit">${esc(unitTxt)}</span>
+      </div>
+      <div class="eq-grid">${g.items.map((e, i) => eqCard(e, i)).join("")}</div>
+    </div>`;
+  }).join("");
   observeAll();
 }
 
@@ -562,6 +633,23 @@ renderBars();
 renderTrend();
 observeAll();
 document.querySelectorAll(".kpi").forEach(el => io.observe(el));
+
+/* 安全網：若 IntersectionObserver 未觸發（背景分頁、特殊 webview、列印），
+   1.5 秒後直接顯示全部內容，確保頁面永遠不會卡在透明狀態。 */
+setTimeout(() => {
+  if (document.querySelector(".reveal.in")) return;
+  document.querySelectorAll(".reveal").forEach(el => {
+    el.classList.add("in");
+    if (el.classList.contains("kpi")) {
+      const v = el.querySelector(".value");
+      const t = v ? Number(v.dataset.c) : 0;
+      if (t) v.childNodes[0].nodeValue = t.toLocaleString(); // 背景分頁不跑 rAF，直接給最終值
+    }
+  });
+  document.querySelectorAll(".bargroup .bar").forEach(b => {
+    b.style.height = b.dataset.h + "%";
+  });
+}, 1500);
 </script>
 </body>
 </html>
