@@ -1,0 +1,13 @@
+# credentials — 絕不入庫
+.git-credentials
+*.token
+.env
+
+# python
+__pycache__/
+*.pyc
+
+# editor / os
+.DS_Store
+.idea/
+.vscode/
