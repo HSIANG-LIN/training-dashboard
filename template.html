@@ -202,6 +202,16 @@ footer code{color:var(--mut);background:rgba(255,255,255,.05);padding:1px 6px;bo
   .count{margin-left:0}
   .q{max-width:none}
 }
+
+.next-panel{background:#f5f2eb;color:#242a25;padding:20px;border-color:#d9ded3}
+.next-options{display:flex;gap:12px 20px;flex-wrap:wrap;margin-bottom:14px}
+.next-options label{display:flex;align-items:center;gap:7px}
+.next-options select{color-scheme:light;background:#fff;color:#242a25;border:1px solid #9aa69a;border-radius:6px;padding:8px;font:inherit}
+.next-title{font-size:24px;font-weight:700;color:#284c3c}
+.next-reason{margin:6px 0 14px;color:#46574d}
+.next-list{list-style:none;margin-top:14px}
+.next-list li{padding:10px 0;border-top:1px solid #d6ddd2;display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:space-between}
+.next-list span{font-variant-numeric:tabular-nums}
 </style>
 </head>
 <body>
@@ -214,6 +224,17 @@ footer code{color:var(--mut);background:rgba(255,255,255,.05);padding:1px 6px;bo
     </div>
     <div class="stats" id="stats"></div>
   </header>
+
+  <section id="nextTraining" hidden aria-labelledby="nextHeading">
+    <div class="sec-head"><h2 id="nextHeading">下一次訓練</h2></div>
+    <div class="block next-panel">
+      <div class="next-options">
+        <label>訓練時間 <select id="nextMinutes"><option value="30">30 分鐘</option><option value="45" selected>45 分鐘</option><option value="60">60 分鐘</option></select></label>
+        <label>目前狀態 <select id="nextState"><option value="ready">正常</option><option value="legs">腿還很痠</option><option value="off">有不適</option></select></label>
+      </div>
+      <div id="nextPlan" aria-live="polite"></div>
+    </div>
+  </section>
 
   <section>
     <div class="sec-head">
@@ -579,6 +600,37 @@ $("#trendSel").addEventListener("change", ev => {
   trendId = ev.target.value;
   renderTrend();
 });
+
+
+function renderNextTraining() {
+  const info = DATA.next_training;
+  if (!info) return;
+  $("#nextTraining").hidden = false;
+  const state = $("#nextState").value;
+  const planNode = $("#nextPlan");
+  if (state === "off") {
+    planNode.textContent = "今天先暫停安排重訓，等不適緩解再選下一練。";
+    return;
+  }
+  const group = info.groups.find(item => state !== "legs" || item.section !== "腿部");
+  const minutes = Number($("#nextMinutes").value);
+  const plan = group.plan.slice(0, minutes === 30 ? 3 : group.plan.length);
+  const sets = plan.reduce((total, exercise) => total + exercise.sets, 0);
+  const breakdown = info.groups.map(item => esc(item.label) + " " + item.count + " 次").join("、");
+  planNode.innerHTML =
+    '<div class="next-title">練' + esc(group.label) + (sets ? ' · ' + sets + ' 組' : '') + '</div>' +
+    '<p class="next-reason">' + esc(info.month) + ' 實績 ' + breakdown +
+    '。' + esc(group.label) + '最近一次 ' + (group.last ? esc(group.last) : '尚無紀錄') +
+    '，本月' + esc(group.section) + ' ' + group.sets + ' 組。資料截至 ' + esc(info.last) + '。</p>' +
+    (plan.length ? '<p>重量沿用同一台器材的紀錄，每組留約 2 下餘力。</p><ul class="next-list">' +
+      plan.map(item => '<li><strong>' + esc(item.name) + '</strong><span>' +
+        (item.weight === null ? '熱身後選重' : item.weight + ' ' + esc(item.unit)) +
+        ' · ' + item.sets + ' 組 × ' + item.low + '–' + item.high + ' 下</span></li>').join('') + '</ul>'
+      : '<p>這類訓練還缺少可用的器材紀錄。</p>');
+}
+$("#nextState").addEventListener("change", renderNextTraining);
+$("#nextMinutes").addEventListener("change", renderNextTraining);
+renderNextTraining();
 
 /* ---------- init ---------- */
 renderChips();
