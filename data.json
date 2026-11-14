@@ -1,14 +1,225 @@
 {
- "generated_at": "2026-11-14T19:52:53",
+ "generated_at": "2026-11-14T21:57:20",
  "today": "2026-11-14",
  "kpi": {
-  "sessions": 15,
-  "sets": 261,
-  "week_sets": 39,
-  "last": "2026-11-12",
-  "equipment": 51
+  "sessions": 16,
+  "sets": 280,
+  "week_sets": 58,
+  "last": "2026-11-14",
+  "equipment": 57
  },
  "equipment": [
+  {
+   "id": "腿伸機-L6",
+   "name": "腿伸機（L6）",
+   "base": "腿伸機",
+   "sub": "L6",
+   "section": "腿部",
+   "kind": "weight",
+   "unit": "kg",
+   "current": 55.0,
+   "reps": null,
+   "prev": null,
+   "delta": null,
+   "date": "2026-11-14",
+   "last_date": "2026-11-14",
+   "points": [
+    {
+     "date": "2026-11-14",
+     "value": 55.0,
+     "unit": "kg",
+     "reps": 13
+    }
+   ],
+   "sessions": 1
+  },
+  {
+   "id": "站姿小腿訓練機-L1",
+   "name": "站姿小腿訓練機（L1）",
+   "base": "站姿小腿訓練機",
+   "sub": "L1",
+   "section": "腿部",
+   "kind": "weight",
+   "unit": "kg",
+   "current": 80.0,
+   "reps": null,
+   "prev": null,
+   "delta": null,
+   "date": "2026-11-14",
+   "last_date": "2026-11-14",
+   "points": [
+    {
+     "date": "2026-11-14",
+     "value": 80.0,
+     "unit": "kg",
+     "reps": 15
+    }
+   ],
+   "sessions": 1
+  },
+  {
+   "id": "大腿外展-L10",
+   "name": "大腿外展（L10）",
+   "base": "大腿外展",
+   "sub": "L10",
+   "section": "腿部",
+   "kind": "weight",
+   "unit": "lbs",
+   "current": 90.0,
+   "reps": null,
+   "prev": null,
+   "delta": null,
+   "date": "2026-11-14",
+   "last_date": "2026-11-14",
+   "points": [
+    {
+     "date": "2026-11-14",
+     "value": 90.0,
+     "unit": "lbs",
+     "reps": 15
+    }
+   ],
+   "sessions": 1
+  },
+  {
+   "id": "大腿內收-L10",
+   "name": "大腿內收（L10）",
+   "base": "大腿內收",
+   "sub": "L10",
+   "section": "腿部",
+   "kind": "weight",
+   "unit": "lbs",
+   "current": 90.0,
+   "reps": null,
+   "prev": null,
+   "delta": null,
+   "date": "2026-11-14",
+   "last_date": "2026-11-14",
+   "points": [
+    {
+     "date": "2026-11-14",
+     "value": 90.0,
+     "unit": "lbs",
+     "reps": 15
+    }
+   ],
+   "sessions": 1
+  },
+  {
+   "id": "坐姿腿推-L15",
+   "name": "坐姿腿推（L15）",
+   "base": "坐姿腿推",
+   "sub": "L15",
+   "section": "腿部",
+   "kind": "weight",
+   "unit": "lbs",
+   "current": 100.0,
+   "reps": null,
+   "prev": null,
+   "delta": null,
+   "date": "2026-11-14",
+   "last_date": "2026-11-14",
+   "points": [
+    {
+     "date": "2026-11-14",
+     "value": 100.0,
+     "unit": "lbs",
+     "reps": 15
+    }
+   ],
+   "sessions": 1
+  },
+  {
+   "id": "坐姿腿彎舉-L4",
+   "name": "坐姿腿彎舉（L4）",
+   "base": "坐姿腿彎舉",
+   "sub": "L4",
+   "section": "腿部",
+   "kind": "weight",
+   "unit": "kg",
+   "current": 43.0,
+   "reps": null,
+   "prev": null,
+   "delta": null,
+   "date": "2026-11-14",
+   "last_date": "2026-11-14",
+   "points": [
+    {
+     "date": "2026-11-14",
+     "value": 43.0,
+     "unit": "kg",
+     "reps": 15
+    }
+   ],
+   "sessions": 1
+  },
+  {
+   "id": "V-Crunch-自重",
+   "name": "V Crunch（自重）",
+   "base": "V Crunch",
+   "sub": "自重",
+   "section": "核心",
+   "kind": "reps",
+   "unit": "下",
+   "current": 80.0,
+   "reps": null,
+   "prev": {
+    "date": "2026-11-12",
+    "value": 70.0,
+    "unit": "下"
+   },
+   "delta": 10.0,
+   "date": "2026-11-14",
+   "last_date": "2026-11-14",
+   "points": [
+    {
+     "date": "2026-10-12",
+     "value": 40.0,
+     "unit": "下"
+    },
+    {
+     "date": "2026-10-20",
+     "value": 35.0,
+     "unit": "下"
+    },
+    {
+     "date": "2026-10-23",
+     "value": 45.0,
+     "unit": "下"
+    },
+    {
+     "date": "2026-11-04",
+     "value": 40.0,
+     "unit": "下"
+    },
+    {
+     "date": "2026-11-06",
+     "value": 50.0,
+     "unit": "下"
+    },
+    {
+     "date": "2026-11-08",
+     "value": 60.0,
+     "unit": "下"
+    },
+    {
+     "date": "2026-11-10",
+     "value": 65.0,
+     "unit": "下"
+    },
+    {
+     "date": "2026-11-12",
+     "value": 70.0,
+     "unit": "下"
+    },
+    {
+     "date": "2026-11-14",
+     "value": 80.0,
+     "unit": "下"
+    }
+   ],
+   "sessions": 9
+  },
   {
    "id": "高拉滑輪訓練機-Lat-Pulldown-28015",
    "name": "高拉滑輪訓練機（Lat Pulldown, 28015）",
@@ -201,68 +412,6 @@
     }
    ],
    "sessions": 2
-  },
-  {
-   "id": "V-Crunch-自重",
-   "name": "V Crunch（自重）",
-   "base": "V Crunch",
-   "sub": "自重",
-   "section": "核心",
-   "kind": "reps",
-   "unit": "下",
-   "current": 70.0,
-   "reps": null,
-   "prev": {
-    "date": "2026-11-10",
-    "value": 65.0,
-    "unit": "下"
-   },
-   "delta": 5.0,
-   "date": "2026-11-12",
-   "last_date": "2026-11-12",
-   "points": [
-    {
-     "date": "2026-10-12",
-     "value": 40.0,
-     "unit": "下"
-    },
-    {
-     "date": "2026-10-20",
-     "value": 35.0,
-     "unit": "下"
-    },
-    {
-     "date": "2026-10-23",
-     "value": 45.0,
-     "unit": "下"
-    },
-    {
-     "date": "2026-11-04",
-     "value": 40.0,
-     "unit": "下"
-    },
-    {
-     "date": "2026-11-06",
-     "value": 50.0,
-     "unit": "下"
-    },
-    {
-     "date": "2026-11-08",
-     "value": 60.0,
-     "unit": "下"
-    },
-    {
-     "date": "2026-11-10",
-     "value": 65.0,
-     "unit": "下"
-    },
-    {
-     "date": "2026-11-12",
-     "value": 70.0,
-     "unit": "下"
-    }
-   ],
-   "sessions": 8
   },
   {
    "id": "Iso-Lateral-Low-Row",
@@ -1495,7 +1644,7 @@
   },
   {
    "section": "腿部",
-   "last": 15,
+   "last": 31,
    "prev": 15
   },
   {
@@ -1510,11 +1659,23 @@
   },
   {
    "section": "核心",
-   "last": 10,
+   "last": 13,
    "prev": 6
   }
  ],
  "sessions": [
+  {
+   "date": "2026-11-14",
+   "parts": [
+    "腿部",
+    "核心"
+   ],
+   "sets": 19,
+   "vol": {
+    "kg": 8144.0,
+    "lbs": 8265.0
+   }
+  },
   {
    "date": "2026-11-12",
    "parts": [
@@ -1629,17 +1790,20 @@
     "kg": 6270.0,
     "lbs": 830.0
    }
-  },
-  {
-   "date": "2026-10-21",
-   "parts": [
-    "腿部"
-   ],
-   "sets": 5,
-   "vol": {}
   }
  ],
  "cardio": [
+  {
+   "date": "2026-11-14",
+   "mode": "走步機爬坡（Matrix 12 號）",
+   "incline": 10.0,
+   "speed": 3.7,
+   "time": 35.0,
+   "km": 2.18,
+   "kcal": 259.0,
+   "pr": {},
+   "note": "2.18 km，機台估算 259 大卡，坡度與速度為平均值"
+  },
   {
    "date": "2026-11-10",
    "mode": "走步機爬坡（Matrix）",
@@ -1858,10 +2022,13 @@
    "date": "2026-11-14",
    "day": "六",
    "theme": "腿 B（後側鏈）＋核心",
-   "status": "today",
+   "status": "done",
    "mismatch": false,
-   "parts": [],
-   "sets": 0
+   "parts": [
+    "腿部",
+    "核心"
+   ],
+   "sets": 19
   },
   {
    "date": "2026-11-15",
