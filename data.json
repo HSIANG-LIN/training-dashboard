@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T21:57:20",
+ "generated_at": "2026-11-14T22:05:18",
  "today": "2026-11-14",
  "kpi": {
   "sessions": 16,
@@ -1631,6 +1631,156 @@
    "sessions": 1
   }
  ],
+ "next_training": {
+  "month": "2026-11",
+  "last": "2026-11-14",
+  "groups": [
+   {
+    "label": "推",
+    "section": "胸部",
+    "count": 1,
+    "sets": 8,
+    "last": "2026-11-08",
+    "plan": [
+     {
+      "name": "Chest Press（器材卡標題 CHEST PRESS，機號未報）",
+      "date": "2026-11-08",
+      "sets": 3,
+      "low": 10,
+      "high": 12,
+      "weight": 60.0,
+      "unit": "kg"
+     },
+     {
+      "name": "飛鳥機（代替 Pec Deck，機器被佔；機號未報）",
+      "date": "2026-11-08",
+      "sets": 2,
+      "low": 10,
+      "high": 12,
+      "weight": 30.0,
+      "unit": "kg"
+     },
+     {
+      "name": "肩部推舉訓練機（Shoulder Press Machine，信捷）",
+      "date": "2026-11-08",
+      "sets": 2,
+      "low": 10,
+      "high": 12,
+      "weight": 30.0,
+      "unit": "kg"
+     },
+     {
+      "name": "側肩上舉訓練機（Lateral Raise，信捷）",
+      "date": "2026-11-08",
+      "sets": 2,
+      "low": 12,
+      "high": 15,
+      "weight": 25.0,
+      "unit": "kg"
+     },
+     {
+      "name": "Seated Dip 坐式三頭機（另一台，75 kg 級）",
+      "date": "2026-11-08",
+      "sets": 2,
+      "low": 10,
+      "high": 12,
+      "weight": 82.5,
+      "unit": "kg"
+     }
+    ]
+   },
+   {
+    "label": "拉",
+    "section": "背部",
+    "count": 2,
+    "sets": 21,
+    "last": "2026-11-12",
+    "plan": [
+     {
+      "name": "高拉滑輪訓練機（Lat Pulldown, 28015）",
+      "date": "2026-11-12",
+      "sets": 3,
+      "low": 8,
+      "high": 12,
+      "weight": 50.0,
+      "unit": "kg"
+     },
+     {
+      "name": "背部划船訓練機（3039，插銷式）",
+      "date": "2026-11-12",
+      "sets": 3,
+      "low": 10,
+      "high": 12,
+      "weight": 45.0,
+      "unit": "kg"
+     },
+     {
+      "name": "反向飛鳥（5 kg 級距，機號未報）",
+      "date": "2026-11-12",
+      "sets": 2,
+      "low": 10,
+      "high": 12,
+      "weight": 25.0,
+      "unit": "kg"
+     },
+     {
+      "name": "二頭肌訓練機（NT-A-AC Arm Curl，信捷）",
+      "date": "2026-11-12",
+      "sets": 2,
+      "low": 10,
+      "high": 12,
+      "weight": 25.0,
+      "unit": "kg"
+     }
+    ]
+   },
+   {
+    "label": "腿",
+    "section": "腿部",
+    "count": 3,
+    "sets": 46,
+    "last": "2026-11-14",
+    "plan": [
+     {
+      "name": "坐姿腿推（L15）",
+      "date": "2026-11-14",
+      "sets": 3,
+      "low": 12,
+      "high": 15,
+      "weight": 95.0,
+      "unit": "lbs"
+     },
+     {
+      "name": "坐姿腿彎舉（L4）",
+      "date": "2026-11-14",
+      "sets": 3,
+      "low": 10,
+      "high": 15,
+      "weight": 43.0,
+      "unit": "kg"
+     },
+     {
+      "name": "腿伸機（L6）",
+      "date": "2026-11-14",
+      "sets": 2,
+      "low": 12,
+      "high": 15,
+      "weight": 55.0,
+      "unit": "kg"
+     },
+     {
+      "name": "站姿小腿訓練機（L1）",
+      "date": "2026-11-14",
+      "sets": 2,
+      "low": 12,
+      "high": 15,
+      "weight": 80.0,
+      "unit": "kg"
+     }
+    ]
+   }
+  ]
+ },
  "section_compare": [
   {
    "section": "胸部",
