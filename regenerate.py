@@ -307,6 +307,72 @@ def build_schedule(sessions: list[dict], today: dt.date) -> list[dict]:
 
 
 # ---------------------------------------------------------------- main
+
+TRAINING_GROUPS = {
+    "push": ("推", "胸部", [
+        (r"胸推|chest press", 3, 10, 12),
+        (r"飛鳥|pec deck", 2, 10, 12),
+        (r"肩部推舉|肩推|shoulder press", 2, 10, 12),
+        (r"側肩|側平舉|lateral raise", 2, 12, 15),
+        (r"三頭|seated dip", 2, 10, 12),
+    ]),
+    "pull": ("拉", "背部", [
+        (r"下拉|高拉|lat pulldown", 3, 8, 12),
+        (r"划船|low row", 3, 10, 12),
+        (r"反向飛鳥", 2, 10, 12),
+        (r"二頭|arm curl", 2, 10, 12),
+    ]),
+    "legs": ("腿", "腿部", [
+        (r"腿推|腿蹬|leg press", 3, 12, 15),
+        (r"腿彎|腿部彎曲|leg curl", 3, 10, 15),
+        (r"腿伸|leg extension", 2, 12, 15),
+        (r"小腿", 2, 12, 15),
+    ]),
+}
+
+
+def build_next_training(rows, today):
+    logged = [(row, [sets for cell in row["sets"] if (sets := parse_set_cell(cell))])
+              for row in rows if row["date"] <= today]
+    logged = [(row, sets) for row, sets in logged if sets]
+    last_logged = max((row["date"] for row, _ in logged), default=None)
+    if last_logged is None:
+        return None
+
+    groups = []
+    for key, (label, section, exercises) in TRAINING_GROUPS.items():
+        primary = [(row, sets) for row, sets in logged if row["section"] == section]
+        dates = {row["date"] for row, _ in primary}
+        last = max(dates, default=None)
+        month = [(row, sets) for row, sets in primary
+                 if row["date"].replace(day=1) == today.replace(day=1)]
+        plan = []
+        for pattern, count, low, high in exercises:
+            matches = [(row, sets) for row, sets in logged
+                       if re.search(pattern, row["name"], re.I)
+                       and (key != "push" or "反向飛鳥" not in row["name"])]
+            if not matches:
+                continue
+            row, sets = max(matches, key=lambda item: item[0]["date"])
+            candidates = [group[0] for group in sets if len(group) == 1
+                          and group[0]["t"] == "wl" and group[0]["u"]]
+            units = {item["u"] for item in candidates}
+            qualified = sorted((item for item in candidates if item["r"] >= low - 1),
+                               key=lambda item: item["w"])
+            start = (qualified[(len(qualified) - 1) // 2]
+                     if qualified and len(units) == 1 else None)
+            plan.append({"name": row["name"], "date": row["date"].isoformat(),
+                         "sets": count, "low": low, "high": high,
+                         "weight": start["w"] if start else None,
+                         "unit": start["u"] if start else None})
+        groups.append({"label": label, "section": section, "count": len({r["date"] for r, _ in month}),
+                       "sets": sum(len(sets) for _, sets in month),
+                       "last": last.isoformat() if last else None, "plan": plan})
+    groups.sort(key=lambda group: (group["last"] == last_logged.isoformat(),
+                                   group["count"], group["last"] or "", group["sets"]))
+    return {"month": today.strftime("%Y-%m"), "last": last_logged.isoformat(), "groups": groups}
+
+
 def main() -> int:
     if not LOG.exists():
         print(f"ERROR: 找不到 {LOG}", file=sys.stderr)
@@ -345,6 +411,7 @@ def main() -> int:
             "equipment": len(equipment),
         },
         "equipment": equipment,
+        "next_training": build_next_training(rows, TODAY),
         "section_compare": build_section_compare(rows, TODAY),
         "sessions": sessions_all,
         "cardio": cardio_out,
