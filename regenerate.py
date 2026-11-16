@@ -93,7 +93,7 @@ def parse_set_cell(cell: str) -> list[dict]:
         m = re.fullmatch(r"(\d+(?:\.\d+)?)\s*[×x*]\s*(\d+)", p)  # 65*20 無單位
         if m:
             segs.append({"t": "wl", "w": float(m.group(1)), "u": None,
-                         "r": int(m.group(3))})
+                         "r": int(m.group(2))})
             continue
         m = re.fullmatch(r"(\d+(?:\.\d+)?)\s*秒", p)
         if m:

@@ -1,14 +1,125 @@
 {
- "generated_at": "2026-11-14T22:05:18",
- "today": "2026-11-14",
+ "generated_at": "2026-11-16T18:49:10",
+ "today": "2026-11-16",
  "kpi": {
-  "sessions": 16,
-  "sets": 280,
-  "week_sets": 58,
-  "last": "2026-11-14",
+  "sessions": 17,
+  "sets": 294,
+  "week_sets": 0,
+  "last": "2026-11-15",
   "equipment": 57
  },
  "equipment": [
+  {
+   "id": "肩部推舉訓練機-Shoulder-Press-Machine-信捷",
+   "name": "肩部推舉訓練機（Shoulder Press Machine，信捷）",
+   "base": "肩部推舉訓練機",
+   "sub": "Shoulder Press Machine，信捷",
+   "section": "肩部",
+   "kind": "weight",
+   "unit": "kg",
+   "current": 30.0,
+   "reps": null,
+   "prev": {
+    "date": "2026-11-08",
+    "value": 35.0,
+    "unit": "kg",
+    "reps": 9
+   },
+   "delta": -5.0,
+   "date": "2026-11-15",
+   "last_date": "2026-11-15",
+   "points": [
+    {
+     "date": "2026-11-08",
+     "value": 35.0,
+     "unit": "kg",
+     "reps": 9
+    },
+    {
+     "date": "2026-11-15",
+     "value": 30.0,
+     "unit": "kg",
+     "reps": 10
+    }
+   ],
+   "sessions": 2
+  },
+  {
+   "id": "側平舉機-Lateral-Raise-S6",
+   "name": "側平舉機（Lateral Raise, S6）",
+   "base": "側平舉機",
+   "sub": "Lateral Raise, S6",
+   "section": "肩部",
+   "kind": "weight",
+   "unit": "lbs",
+   "current": 25.0,
+   "reps": null,
+   "prev": {
+    "date": "2026-10-20",
+    "value": 25.0,
+    "unit": "lbs",
+    "reps": 11
+   },
+   "delta": 0.0,
+   "date": "2026-11-15",
+   "last_date": "2026-11-15",
+   "points": [
+    {
+     "date": "2026-10-20",
+     "value": 25.0,
+     "unit": "lbs",
+     "reps": 11
+    },
+    {
+     "date": "2026-11-15",
+     "value": 25.0,
+     "unit": "lbs",
+     "reps": 15
+    }
+   ],
+   "sessions": 2
+  },
+  {
+   "id": "三頭下壓機-Triceps-Press-Life-Fitness-A10",
+   "name": "三頭下壓機（Triceps Press, Life Fitness A10）",
+   "base": "三頭下壓機",
+   "sub": "Triceps Press, Life Fitness A10",
+   "section": "手臂",
+   "kind": "weight",
+   "unit": "lbs",
+   "current": 75.0,
+   "reps": null,
+   "prev": {
+    "date": "2026-10-29",
+    "value": 65.0,
+    "unit": "lbs",
+    "reps": 11
+   },
+   "delta": 10.0,
+   "date": "2026-11-15",
+   "last_date": "2026-11-15",
+   "points": [
+    {
+     "date": "2026-10-20",
+     "value": 45.0,
+     "unit": "lbs",
+     "reps": 14
+    },
+    {
+     "date": "2026-10-29",
+     "value": 65.0,
+     "unit": "lbs",
+     "reps": 11
+    },
+    {
+     "date": "2026-11-15",
+     "value": 75.0,
+     "unit": "lbs",
+     "reps": 12
+    }
+   ],
+   "sessions": 3
+  },
   {
    "id": "腿伸機-L6",
    "name": "腿伸機（L6）",
@@ -644,30 +755,6 @@
    "sessions": 1
   },
   {
-   "id": "肩部推舉訓練機-Shoulder-Press-Machine-信捷",
-   "name": "肩部推舉訓練機（Shoulder Press Machine，信捷）",
-   "base": "肩部推舉訓練機",
-   "sub": "Shoulder Press Machine，信捷",
-   "section": "肩部",
-   "kind": "weight",
-   "unit": "kg",
-   "current": 35.0,
-   "reps": null,
-   "prev": null,
-   "delta": null,
-   "date": "2026-11-08",
-   "last_date": "2026-11-08",
-   "points": [
-    {
-     "date": "2026-11-08",
-     "value": 35.0,
-     "unit": "kg",
-     "reps": 9
-    }
-   ],
-   "sessions": 1
-  },
-  {
    "id": "單槓懸垂-Dead-Hang-自重",
    "name": "單槓懸垂（Dead Hang，自重）",
    "base": "單槓懸垂",
@@ -1009,41 +1096,6 @@
    "sessions": 1
   },
   {
-   "id": "三頭下壓機-Triceps-Press-Life-Fitness-A10",
-   "name": "三頭下壓機（Triceps Press, Life Fitness A10）",
-   "base": "三頭下壓機",
-   "sub": "Triceps Press, Life Fitness A10",
-   "section": "手臂",
-   "kind": "weight",
-   "unit": "lbs",
-   "current": 65.0,
-   "reps": null,
-   "prev": {
-    "date": "2026-10-20",
-    "value": 45.0,
-    "unit": "lbs",
-    "reps": 14
-   },
-   "delta": 20.0,
-   "date": "2026-10-29",
-   "last_date": "2026-10-29",
-   "points": [
-    {
-     "date": "2026-10-20",
-     "value": 45.0,
-     "unit": "lbs",
-     "reps": 14
-    },
-    {
-     "date": "2026-10-29",
-     "value": 65.0,
-     "unit": "lbs",
-     "reps": 11
-    }
-   ],
-   "sessions": 2
-  },
-  {
    "id": "Iso-Lateral-Wide-Pulldown-分動式寬距背部下拉",
    "name": "Iso-Lateral Wide Pulldown（分動式寬距背部下拉）",
    "base": "Iso-Lateral Wide Pulldown",
@@ -1318,30 +1370,6 @@
     }
    ],
    "sessions": 2
-  },
-  {
-   "id": "側平舉機-Lateral-Raise-S6",
-   "name": "側平舉機（Lateral Raise, S6）",
-   "base": "側平舉機",
-   "sub": "Lateral Raise, S6",
-   "section": "肩部",
-   "kind": "weight",
-   "unit": "lbs",
-   "current": 25.0,
-   "reps": null,
-   "prev": null,
-   "delta": null,
-   "date": "2026-10-20",
-   "last_date": "2026-10-20",
-   "points": [
-    {
-     "date": "2026-10-20",
-     "value": 25.0,
-     "unit": "lbs",
-     "reps": 11
-    }
-   ],
-   "sessions": 1
   },
   {
    "id": "二頭彎舉機-Biceps-Curl-Life-Fitness-A6",
@@ -1633,62 +1661,8 @@
  ],
  "next_training": {
   "month": "2026-11",
-  "last": "2026-11-14",
+  "last": "2026-11-15",
   "groups": [
-   {
-    "label": "推",
-    "section": "胸部",
-    "count": 1,
-    "sets": 8,
-    "last": "2026-11-08",
-    "plan": [
-     {
-      "name": "Chest Press（器材卡標題 CHEST PRESS，機號未報）",
-      "date": "2026-11-08",
-      "sets": 3,
-      "low": 10,
-      "high": 12,
-      "weight": 60.0,
-      "unit": "kg"
-     },
-     {
-      "name": "飛鳥機（代替 Pec Deck，機器被佔；機號未報）",
-      "date": "2026-11-08",
-      "sets": 2,
-      "low": 10,
-      "high": 12,
-      "weight": 30.0,
-      "unit": "kg"
-     },
-     {
-      "name": "肩部推舉訓練機（Shoulder Press Machine，信捷）",
-      "date": "2026-11-08",
-      "sets": 2,
-      "low": 10,
-      "high": 12,
-      "weight": 30.0,
-      "unit": "kg"
-     },
-     {
-      "name": "側肩上舉訓練機（Lateral Raise，信捷）",
-      "date": "2026-11-08",
-      "sets": 2,
-      "low": 12,
-      "high": 15,
-      "weight": 25.0,
-      "unit": "kg"
-     },
-     {
-      "name": "Seated Dip 坐式三頭機（另一台，75 kg 級）",
-      "date": "2026-11-08",
-      "sets": 2,
-      "low": 10,
-      "high": 12,
-      "weight": 82.5,
-      "unit": "kg"
-     }
-    ]
-   },
    {
     "label": "拉",
     "section": "背部",
@@ -1778,14 +1752,68 @@
       "unit": "kg"
      }
     ]
+   },
+   {
+    "label": "推",
+    "section": "胸部",
+    "count": 2,
+    "sets": 14,
+    "last": "2026-11-15",
+    "plan": [
+     {
+      "name": "胸推機（Life Fitness C7）",
+      "date": "2026-11-15",
+      "sets": 3,
+      "low": 10,
+      "high": 12,
+      "weight": null,
+      "unit": null
+     },
+     {
+      "name": "飛鳥機（機號未報）",
+      "date": "2026-11-15",
+      "sets": 2,
+      "low": 10,
+      "high": 12,
+      "weight": null,
+      "unit": null
+     },
+     {
+      "name": "肩部推舉訓練機（Shoulder Press Machine，信捷）",
+      "date": "2026-11-15",
+      "sets": 2,
+      "low": 10,
+      "high": 12,
+      "weight": 30.0,
+      "unit": "kg"
+     },
+     {
+      "name": "側平舉機（Lateral Raise, S6）",
+      "date": "2026-11-15",
+      "sets": 2,
+      "low": 12,
+      "high": 15,
+      "weight": 25.0,
+      "unit": "lbs"
+     },
+     {
+      "name": "三頭下壓機（Triceps Press, Life Fitness A10）",
+      "date": "2026-11-15",
+      "sets": 2,
+      "low": 10,
+      "high": 12,
+      "weight": 65.0,
+      "unit": "lbs"
+     }
+    ]
    }
   ]
  },
  "section_compare": [
   {
    "section": "胸部",
-   "last": 8,
-   "prev": 0
+   "last": 6,
+   "prev": 8
   },
   {
    "section": "背部",
@@ -1800,20 +1828,33 @@
   {
    "section": "肩部",
    "last": 9,
-   "prev": 3
+   "prev": 9
   },
   {
    "section": "手臂",
-   "last": 6,
-   "prev": 3
+   "last": 5,
+   "prev": 6
   },
   {
    "section": "核心",
-   "last": 13,
-   "prev": 6
+   "last": 7,
+   "prev": 12
   }
  ],
  "sessions": [
+  {
+   "date": "2026-11-15",
+   "parts": [
+    "胸部",
+    "肩部",
+    "手臂"
+   ],
+   "sets": 14,
+   "vol": {
+    "kg": 960.0,
+    "lbs": 2675.0
+   }
+  },
   {
    "date": "2026-11-14",
    "parts": [
@@ -1927,22 +1968,20 @@
     "kg": 3150.0,
     "lbs": 7570.0
    }
-  },
-  {
-   "date": "2026-10-23",
-   "parts": [
-    "背部",
-    "腿部",
-    "核心"
-   ],
-   "sets": 23,
-   "vol": {
-    "kg": 6270.0,
-    "lbs": 830.0
-   }
   }
  ],
  "cardio": [
+  {
+   "date": "2026-11-15",
+   "mode": "走步機爬坡（Matrix 9 號）",
+   "incline": 13.0,
+   "speed": 3.7,
+   "time": 37.0,
+   "km": 2.3,
+   "kcal": 309.0,
+   "pr": {},
+   "note": "2.30 km，機台估算 309 大卡，坡度與速度為平均值。推日 14 組後。"
+  },
   {
    "date": "2026-11-14",
    "mode": "走步機爬坡（Matrix 12 號）",
@@ -2116,28 +2155,25 @@
  ],
  "schedule": [
   {
-   "date": "2026-11-09",
+   "date": "2026-11-16",
    "day": "一",
    "theme": "腿 A（股四＋臀）＋核心",
-   "status": "missed",
+   "status": "today",
    "mismatch": false,
    "parts": [],
    "sets": 0
   },
   {
-   "date": "2026-11-10",
+   "date": "2026-11-17",
    "day": "二",
    "theme": "推：胸＋肩＋三頭",
-   "status": "done",
-   "mismatch": true,
-   "parts": [
-    "腿部",
-    "核心"
-   ],
-   "sets": 18
+   "status": "upcoming",
+   "mismatch": false,
+   "parts": [],
+   "sets": 0
   },
   {
-   "date": "2026-11-11",
+   "date": "2026-11-18",
    "day": "三",
    "theme": "休息",
    "status": "rest",
@@ -2146,21 +2182,16 @@
    "sets": 0
   },
   {
-   "date": "2026-11-12",
+   "date": "2026-11-19",
    "day": "四",
    "theme": "拉：背＋二頭＋核心",
-   "status": "done",
+   "status": "upcoming",
    "mismatch": false,
-   "parts": [
-    "背部",
-    "肩部",
-    "手臂",
-    "核心"
-   ],
-   "sets": 21
+   "parts": [],
+   "sets": 0
   },
   {
-   "date": "2026-11-13",
+   "date": "2026-11-20",
    "day": "五",
    "theme": "休息",
    "status": "rest",
@@ -2169,19 +2200,16 @@
    "sets": 0
   },
   {
-   "date": "2026-11-14",
+   "date": "2026-11-21",
    "day": "六",
    "theme": "腿 B（後側鏈）＋核心",
-   "status": "done",
+   "status": "upcoming",
    "mismatch": false,
-   "parts": [
-    "腿部",
-    "核心"
-   ],
-   "sets": 19
+   "parts": [],
+   "sets": 0
   },
   {
-   "date": "2026-11-15",
+   "date": "2026-11-22",
    "day": "日",
    "theme": "上肢輕補量（RIR 2）＋有氧",
    "status": "upcoming",
