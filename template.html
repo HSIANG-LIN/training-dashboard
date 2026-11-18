@@ -236,6 +236,15 @@ footer code{color:var(--mut);background:rgba(255,255,255,.05);padding:1px 6px;bo
     </div>
   </section>
 
+  <section aria-labelledby="dailyHeading">
+    <div class="sec-head"><h2 id="dailyHeading">每日訓練紀錄</h2></div>
+    <div class="block">
+      <label for="historyDate">訓練日期</label>
+      <select class="sel" id="historyDate"></select>
+      <div id="dailyWorkout" aria-live="polite"></div>
+    </div>
+  </section>
+
   <section>
     <div class="sec-head">
       <h2>本週排程 vs 實際</h2>
@@ -270,21 +279,6 @@ footer code{color:var(--mut);background:rgba(255,255,255,.05);padding:1px 6px;bo
         <table class="tbl">
           <thead><tr><th>部位</th><th class="ra">近 7 天</th><th class="ra">前 7 天</th><th class="ra">增減</th></tr></thead>
           <tbody id="cmpBody"></tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="sec-head">
-      <h2>最近訓練</h2>
-      <span class="sec-note">最近 10 堂；總量依單位分開計算，kg / lbs 不合併</span>
-    </div>
-    <div class="block">
-      <div class="tw">
-        <table class="tbl">
-          <thead><tr><th>日期</th><th>部位</th><th class="ra">組數</th><th class="ra">總量（分單位）</th></tr></thead>
-          <tbody id="histBody"></tbody>
         </table>
       </div>
     </div>
@@ -512,19 +506,35 @@ $("#cmpBody").innerHTML = DATA.section_compare.map(r => {
   </tr>`;
 }).join("");
 
-/* ---------- session history ---------- */
-$("#histBody").innerHTML = DATA.sessions.map(s => {
-  const vols = Object.entries(s.vol);
-  const vol = vols.length
-    ? vols.map(([u, v]) => `${num(Math.round(v))} ${esc(u)}`).join(" · ")
-    : `<span class="d-fl">自重</span>`;
-  return `<tr>
-    <td class="mono">${md(s.date)}</td>
-    <td class="mut">${s.parts.length ? esc(s.parts.join("、")) : "-"}</td>
-    <td class="ra mono">${s.sets}</td>
-    <td class="ra mono vol">${vol}</td>
-  </tr>`;
-}).join("");
+/* ---------- daily training ---------- */
+const historyDate = $("#historyDate");
+const sessionsByDate = new Map(DATA.sessions.map(session => [session.date, session]));
+const trainingDates = [...new Set([...sessionsByDate.keys(), ...DATA.cardio.map(item => item.date)])].sort().reverse();
+historyDate.innerHTML = trainingDates.map(date => `<option>${esc(date)}</option>`).join("");
+historyDate.disabled = !trainingDates.length;
+
+function renderDailyWorkout() {
+  const date = historyDate.value;
+  const workout = $("#dailyWorkout");
+  if (!date) {
+    workout.textContent = "目前沒有訓練紀錄。";
+    return;
+  }
+  const session = sessionsByDate.get(date);
+  const cardio = DATA.cardio.filter(item => item.date === date);
+  const exercises = session?.exercises ?? [];
+  const summary = session
+    ? `${session.sets} 組 · ${esc(session.parts.join("、"))}`
+    : "當天只有有氧紀錄";
+  workout.innerHTML = `<p><strong>${summary}</strong></p>` +
+    (exercises.length ? '<ul class="next-list">' + exercises.map(exercise =>
+      `<li><div><strong>${esc(exercise.name)} · ${exercise.sets.length} 組</strong><div>${
+        exercise.sets.map((set, index) => `第 ${index + 1} 組 ${esc(set)}`).join("　")
+      }</div></div></li>`).join("") + '</ul>' : '') +
+    cardio.map(item => `<p>有氧 · ${esc(item.mode)}${item.time == null ? "" : ` · ${num(item.time)} 分鐘`}</p>`).join("");
+}
+historyDate.addEventListener("change", renderDailyWorkout);
+renderDailyWorkout();
 
 /* ---------- cardio ---------- */
 $("#cardioBody").innerHTML = DATA.cardio.map(c => {
