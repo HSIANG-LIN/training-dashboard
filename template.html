@@ -531,7 +531,7 @@ function renderDailyWorkout() {
       `<li><div><strong>${esc(exercise.name)} · ${exercise.sets.length} 組</strong><div>${
         exercise.sets.map((set, index) => `第 ${index + 1} 組 ${esc(set)}`).join("　")
       }</div></div></li>`).join("") + '</ul>' : '') +
-    cardio.map(item => `<p>有氧 · ${esc(item.mode)}${item.time == null ? "" : ` · ${num(item.time)} 分鐘`}</p>`).join("");
+    cardio.map(item => `<p>有氧 · ${esc(item.mode)}${item.time == null ? "" : ` · ${num(item.time)} 分鐘`}${item.note ? ` · ${esc(item.note)}` : ""}</p>`).join("");
 }
 historyDate.addEventListener("change", renderDailyWorkout);
 renderDailyWorkout();
