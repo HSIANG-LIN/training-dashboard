@@ -230,7 +230,7 @@ footer code{color:var(--mut);background:rgba(255,255,255,.05);padding:1px 6px;bo
     <div class="block next-panel">
       <div class="next-options">
         <label>訓練時間 <select id="nextMinutes"><option value="30">30 分鐘</option><option value="45" selected>45 分鐘</option><option value="60">60 分鐘</option></select></label>
-        <label>目前狀態 <select id="nextState"><option value="ready">正常</option><option value="legs">腿還很痠</option><option value="off">有不適</option></select></label>
+        <label>目前狀態 <select id="nextState"><option value="ready">正常</option><option value="legs">腿還很痠</option><option value="tired">整體疲勞／睡不好</option><option value="off">有不適</option></select></label>
       </div>
       <div id="nextPlan" aria-live="polite"></div>
     </div>
@@ -612,18 +612,17 @@ function renderNextTraining() {
     planNode.textContent = "今天先暫停安排重訓，等不適緩解再選下一練。";
     return;
   }
+  if (state === "tired") {
+    planNode.textContent = "今晚優先恢復。想活動可輕鬆走路，等精神與暖身表現恢復再練。";
+    return;
+  }
   const group = info.groups.find(item => state !== "legs" || item.section !== "腿部");
   const minutes = Number($("#nextMinutes").value);
-  const timeLimits = {
-    30: { exercises: 3, setsPerExercise: 2 },
-    45: { exercises: 4, setsPerExercise: 2 },
-    60: { exercises: group.plan.length, setsPerExercise: Infinity },
-  };
-  const limit = timeLimits[minutes] ?? timeLimits[45];
-  const plan = group.plan.slice(0, limit.exercises).map(exercise => ({
-    ...exercise,
-    sets: Math.min(exercise.sets, limit.setsPerExercise),
-  }));
+  const primary = /胸推|chest press|肩部推舉|肩推|shoulder press|下拉|高拉|lat pulldown|划船|low row|腿推|腿蹬|leg press|腿彎|腿部彎曲|leg curl/i;
+  const main = group.plan.filter(exercise => primary.test(exercise.name));
+  const accessories = group.plan.filter(exercise => !primary.test(exercise.name));
+  const limit = {30: 2, 45: 3, 60: group.plan.length}[minutes] ?? 3;
+  const plan = [...main, ...accessories].slice(0, limit);
   const sets = plan.reduce((total, exercise) => total + exercise.sets, 0);
   const breakdown = info.groups.map(item => esc(item.label) + " " + item.count + " 次").join("、");
   planNode.innerHTML =
@@ -631,8 +630,8 @@ function renderNextTraining() {
     '<p class="next-reason">' + esc(info.month) + ' 實績 ' + breakdown +
     '。' + esc(group.label) + '最近一次 ' + (group.last ? esc(group.last) : '尚無紀錄') +
     '，本月' + esc(group.section) + ' ' + group.sets + ' 組。資料截至 ' + esc(info.last) + '。</p>' +
-    (plan.length ? '<p>重量沿用同一台器材的紀錄，每組留約 2 下餘力。</p><ul class="next-list">' +
-      plan.map(item => '<li><strong>' + esc(item.name) + '</strong><span>' +
+    (plan.length ? '<p>先暖身，再做以下工作組。主動作組間休息約 2–3 分鐘，輔助動作約 1–2 分鐘。重量用同一台器材的紀錄當起點，每組留約 2 下餘力。若動作變形或達不到目標下限，先降重。</p><ul class="next-list">' +
+      plan.map(item => '<li><strong>' + esc(item.name) + '</strong><span>' + (primary.test(item.name) ? '主動作 · ' : '輔助 · ') +
         (item.weight === null ? '熱身後選重' : item.weight + ' ' + esc(item.unit)) +
         ' · ' + item.sets + ' 組 × ' + item.low + '–' + item.high + ' 下</span></li>').join('') + '</ul>'
       : '<p>這類訓練還缺少可用的器材紀錄。</p>');
