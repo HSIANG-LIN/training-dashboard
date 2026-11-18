@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T10:45:28",
+ "generated_at": "2026-11-18T10:51:43",
  "today": "2026-11-18",
  "kpi": {
   "sessions": 18,
@@ -2964,6 +2964,17 @@
   }
  ],
  "cardio": [
+  {
+   "date": "2026-11-17",
+   "mode": "階梯機",
+   "incline": null,
+   "speed": null,
+   "time": null,
+   "km": null,
+   "kcal": null,
+   "pr": {},
+   "note": "拉日後有氧，主觀感受比跑步機爬坡更累。"
+  },
   {
    "date": "2026-11-15",
    "mode": "走步機爬坡（Matrix 9 號）",
