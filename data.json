@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-18T10:51:43",
+ "generated_at": "2026-11-18T10:59:25",
  "today": "2026-11-18",
  "kpi": {
   "sessions": 18,
@@ -2966,14 +2966,14 @@
  "cardio": [
   {
    "date": "2026-11-17",
-   "mode": "階梯機",
+   "mode": "階梯機（Matrix 3 號）",
    "incline": null,
    "speed": null,
-   "time": null,
+   "time": 31.0,
    "km": null,
-   "kcal": null,
+   "kcal": 296.0,
    "pr": {},
-   "note": "拉日後有氧，主觀感受比跑步機爬坡更累。"
+   "note": "機台估算 296 大卡，2,081 步、130 樓。拉日後有氧，主觀感受比跑步機爬坡更累。"
   },
   {
    "date": "2026-11-15",
