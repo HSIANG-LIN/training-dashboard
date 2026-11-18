@@ -198,24 +198,29 @@ def build_sessions(rows: list[dict]) -> list[dict]:
     by_date: dict[dt.date, dict] = {}
     for r in rows:
         e = by_date.setdefault(r["date"], {"date": r["date"], "parts": [],
-                                           "sets": 0, "vol": {}})
+                                           "sets": 0, "vol": {}, "exercises": []})
         if r["section"] not in e["parts"]:
             e["parts"].append(r["section"])
+        recorded_sets = []
         for c in r["sets"]:
             segs = parse_set_cell(c)
             if not segs:
                 continue
+            recorded_sets.append(c.strip())
             e["sets"] += 1  # 一格 = 一組（drop set 同組）
             for s in segs:
                 if s["t"] == "wl" and s["u"]:
                     e["vol"][s["u"]] = e["vol"].get(s["u"], 0) + s["w"] * s["r"]
+        if recorded_sets:
+            e["exercises"].append({"name": r["name"], "sets": recorded_sets})
     out = []
-    for d in sorted(by_date, reverse=True)[:10]:
+    for d in sorted(by_date, reverse=True):
         e = by_date[d]
         out.append({"date": d.isoformat(),
                     "parts": [p for p in SECTION_ORDER if p in e["parts"]]
                             + [p for p in e["parts"] if p not in SECTION_ORDER],
                     "sets": e["sets"],
+                    "exercises": e["exercises"],
                     "vol": {u: round(v, 1) for u, v in e["vol"].items()}})
     return out
 
@@ -381,7 +386,7 @@ def main() -> int:
     rows = [r for rs in body.values() for r in rs]
 
     equipment = build_equipment(rows)
-    sessions_all = build_sessions(rows)  # 10 堂
+    sessions_all = build_sessions(rows)
     # 全部訓練日期（供排程比對）
     all_dates = {r["date"].isoformat() for r in rows}
     full_sessions = []
