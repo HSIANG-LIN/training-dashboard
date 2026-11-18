@@ -614,7 +614,16 @@ function renderNextTraining() {
   }
   const group = info.groups.find(item => state !== "legs" || item.section !== "腿部");
   const minutes = Number($("#nextMinutes").value);
-  const plan = group.plan.slice(0, minutes === 30 ? 3 : group.plan.length);
+  const timeLimits = {
+    30: { exercises: 3, setsPerExercise: 2 },
+    45: { exercises: 4, setsPerExercise: 2 },
+    60: { exercises: group.plan.length, setsPerExercise: Infinity },
+  };
+  const limit = timeLimits[minutes] ?? timeLimits[45];
+  const plan = group.plan.slice(0, limit.exercises).map(exercise => ({
+    ...exercise,
+    sets: Math.min(exercise.sets, limit.setsPerExercise),
+  }));
   const sets = plan.reduce((total, exercise) => total + exercise.sets, 0);
   const breakdown = info.groups.map(item => esc(item.label) + " " + item.count + " 次").join("、");
   planNode.innerHTML =
