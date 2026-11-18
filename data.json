@@ -1,14 +1,86 @@
 {
- "generated_at": "2026-11-16T18:49:10",
- "today": "2026-11-16",
+ "generated_at": "2026-11-18T10:14:35",
+ "today": "2026-11-18",
  "kpi": {
-  "sessions": 17,
-  "sets": 294,
-  "week_sets": 0,
-  "last": "2026-11-15",
-  "equipment": 57
+  "sessions": 18,
+  "sets": 306,
+  "week_sets": 12,
+  "last": "2026-11-17",
+  "equipment": 60
  },
  "equipment": [
+  {
+   "id": "坐姿划船-B5",
+   "name": "坐姿划船（B5）",
+   "base": "坐姿划船",
+   "sub": "B5",
+   "section": "背部",
+   "kind": "weight",
+   "unit": "kg",
+   "current": 45.0,
+   "reps": null,
+   "prev": null,
+   "delta": null,
+   "date": "2026-11-17",
+   "last_date": "2026-11-17",
+   "points": [
+    {
+     "date": "2026-11-17",
+     "value": 45.0,
+     "unit": "kg",
+     "reps": 13
+    }
+   ],
+   "sessions": 1
+  },
+  {
+   "id": "反向飛鳥-機號待確認",
+   "name": "反向飛鳥（機號待確認）",
+   "base": "反向飛鳥",
+   "sub": "機號待確認",
+   "section": "肩部",
+   "kind": "weight",
+   "unit": "kg",
+   "current": 25.0,
+   "reps": null,
+   "prev": null,
+   "delta": null,
+   "date": "2026-11-17",
+   "last_date": "2026-11-17",
+   "points": [
+    {
+     "date": "2026-11-17",
+     "value": 25.0,
+     "unit": "kg",
+     "reps": 13
+    }
+   ],
+   "sessions": 1
+  },
+  {
+   "id": "二頭彎舉-A4",
+   "name": "二頭彎舉（A4）",
+   "base": "二頭彎舉",
+   "sub": "A4",
+   "section": "手臂",
+   "kind": "weight",
+   "unit": "kg",
+   "current": 25.0,
+   "reps": null,
+   "prev": null,
+   "delta": null,
+   "date": "2026-11-17",
+   "last_date": "2026-11-17",
+   "points": [
+    {
+     "date": "2026-11-17",
+     "value": 25.0,
+     "unit": "kg",
+     "reps": 14
+    }
+   ],
+   "sessions": 1
+  },
   {
    "id": "肩部推舉訓練機-Shoulder-Press-Machine-信捷",
    "name": "肩部推舉訓練機（Shoulder Press Machine，信捷）",
@@ -1661,98 +1733,8 @@
  ],
  "next_training": {
   "month": "2026-11",
-  "last": "2026-11-15",
+  "last": "2026-11-17",
   "groups": [
-   {
-    "label": "拉",
-    "section": "背部",
-    "count": 2,
-    "sets": 21,
-    "last": "2026-11-12",
-    "plan": [
-     {
-      "name": "高拉滑輪訓練機（Lat Pulldown, 28015）",
-      "date": "2026-11-12",
-      "sets": 3,
-      "low": 8,
-      "high": 12,
-      "weight": 50.0,
-      "unit": "kg"
-     },
-     {
-      "name": "背部划船訓練機（3039，插銷式）",
-      "date": "2026-11-12",
-      "sets": 3,
-      "low": 10,
-      "high": 12,
-      "weight": 45.0,
-      "unit": "kg"
-     },
-     {
-      "name": "反向飛鳥（5 kg 級距，機號未報）",
-      "date": "2026-11-12",
-      "sets": 2,
-      "low": 10,
-      "high": 12,
-      "weight": 25.0,
-      "unit": "kg"
-     },
-     {
-      "name": "二頭肌訓練機（NT-A-AC Arm Curl，信捷）",
-      "date": "2026-11-12",
-      "sets": 2,
-      "low": 10,
-      "high": 12,
-      "weight": 25.0,
-      "unit": "kg"
-     }
-    ]
-   },
-   {
-    "label": "腿",
-    "section": "腿部",
-    "count": 3,
-    "sets": 46,
-    "last": "2026-11-14",
-    "plan": [
-     {
-      "name": "坐姿腿推（L15）",
-      "date": "2026-11-14",
-      "sets": 3,
-      "low": 12,
-      "high": 15,
-      "weight": 95.0,
-      "unit": "lbs"
-     },
-     {
-      "name": "坐姿腿彎舉（L4）",
-      "date": "2026-11-14",
-      "sets": 3,
-      "low": 10,
-      "high": 15,
-      "weight": 43.0,
-      "unit": "kg"
-     },
-     {
-      "name": "腿伸機（L6）",
-      "date": "2026-11-14",
-      "sets": 2,
-      "low": 12,
-      "high": 15,
-      "weight": 55.0,
-      "unit": "kg"
-     },
-     {
-      "name": "站姿小腿訓練機（L1）",
-      "date": "2026-11-14",
-      "sets": 2,
-      "low": 12,
-      "high": 15,
-      "weight": 80.0,
-      "unit": "kg"
-     }
-    ]
-   },
    {
     "label": "推",
     "section": "胸部",
@@ -1806,6 +1788,96 @@
       "unit": "lbs"
      }
     ]
+   },
+   {
+    "label": "腿",
+    "section": "腿部",
+    "count": 3,
+    "sets": 46,
+    "last": "2026-11-14",
+    "plan": [
+     {
+      "name": "坐姿腿推（L15）",
+      "date": "2026-11-14",
+      "sets": 3,
+      "low": 12,
+      "high": 15,
+      "weight": 95.0,
+      "unit": "lbs"
+     },
+     {
+      "name": "坐姿腿彎舉（L4）",
+      "date": "2026-11-14",
+      "sets": 3,
+      "low": 10,
+      "high": 15,
+      "weight": 43.0,
+      "unit": "kg"
+     },
+     {
+      "name": "腿伸機（L6）",
+      "date": "2026-11-14",
+      "sets": 2,
+      "low": 12,
+      "high": 15,
+      "weight": 55.0,
+      "unit": "kg"
+     },
+     {
+      "name": "站姿小腿訓練機（L1）",
+      "date": "2026-11-14",
+      "sets": 2,
+      "low": 12,
+      "high": 15,
+      "weight": 80.0,
+      "unit": "kg"
+     }
+    ]
+   },
+   {
+    "label": "拉",
+    "section": "背部",
+    "count": 3,
+    "sets": 27,
+    "last": "2026-11-17",
+    "plan": [
+     {
+      "name": "背部下拉訓練機（B2）",
+      "date": "2026-11-17",
+      "sets": 3,
+      "low": 8,
+      "high": 12,
+      "weight": null,
+      "unit": null
+     },
+     {
+      "name": "坐姿划船（B5）",
+      "date": "2026-11-17",
+      "sets": 3,
+      "low": 10,
+      "high": 12,
+      "weight": 40.0,
+      "unit": "kg"
+     },
+     {
+      "name": "反向飛鳥（機號待確認）",
+      "date": "2026-11-17",
+      "sets": 2,
+      "low": 10,
+      "high": 12,
+      "weight": 25.0,
+      "unit": "kg"
+     },
+     {
+      "name": "二頭彎舉（A4）",
+      "date": "2026-11-17",
+      "sets": 2,
+      "low": 10,
+      "high": 12,
+      "weight": 25.0,
+      "unit": "kg"
+     }
+    ]
    }
   ]
  },
@@ -1817,31 +1889,43 @@
   },
   {
    "section": "背部",
-   "last": 14,
+   "last": 20,
    "prev": 7
   },
   {
    "section": "腿部",
-   "last": 31,
+   "last": 16,
    "prev": 15
   },
   {
    "section": "肩部",
-   "last": 9,
+   "last": 12,
    "prev": 9
   },
   {
    "section": "手臂",
-   "last": 5,
+   "last": 8,
    "prev": 6
   },
   {
    "section": "核心",
-   "last": 7,
+   "last": 4,
    "prev": 12
   }
  ],
  "sessions": [
+  {
+   "date": "2026-11-17",
+   "parts": [
+    "背部",
+    "肩部",
+    "手臂"
+   ],
+   "sets": 12,
+   "vol": {
+    "kg": 3580.0
+   }
+  },
   {
    "date": "2026-11-15",
    "parts": [
@@ -1955,18 +2039,6 @@
    "vol": {
     "kg": 4620.5,
     "lbs": 2225.0
-   }
-  },
-  {
-   "date": "2026-10-27",
-   "parts": [
-    "腿部",
-    "核心"
-   ],
-   "sets": 16,
-   "vol": {
-    "kg": 3150.0,
-    "lbs": 7570.0
    }
   }
  ],
@@ -2158,7 +2230,7 @@
    "date": "2026-11-16",
    "day": "一",
    "theme": "腿 A（股四＋臀）＋核心",
-   "status": "today",
+   "status": "missed",
    "mismatch": false,
    "parts": [],
    "sets": 0
@@ -2167,10 +2239,14 @@
    "date": "2026-11-17",
    "day": "二",
    "theme": "推：胸＋肩＋三頭",
-   "status": "upcoming",
+   "status": "done",
    "mismatch": false,
-   "parts": [],
-   "sets": 0
+   "parts": [
+    "背部",
+    "肩部",
+    "手臂"
+   ],
+   "sets": 12
   },
   {
    "date": "2026-11-18",
