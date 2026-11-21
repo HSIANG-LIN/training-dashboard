@@ -1,14 +1,73 @@
 {
- "generated_at": "2026-11-19T22:24:43",
- "today": "2026-11-19",
+ "generated_at": "2026-11-21T21:47:56",
+ "today": "2026-11-21",
  "kpi": {
-  "sessions": 19,
-  "sets": 318,
-  "week_sets": 24,
-  "last": "2026-11-19",
-  "equipment": 61
+  "sessions": 20,
+  "sets": 331,
+  "week_sets": 37,
+  "last": "2026-11-21",
+  "equipment": 62
  },
  "equipment": [
+  {
+   "id": "坐姿腿推-L15",
+   "name": "坐姿腿推（L15）",
+   "base": "坐姿腿推",
+   "sub": "L15",
+   "section": "腿部",
+   "kind": "weight",
+   "unit": "lbs",
+   "current": 95.0,
+   "reps": null,
+   "prev": {
+    "date": "2026-11-14",
+    "value": 100.0,
+    "unit": "lbs",
+    "reps": 15
+   },
+   "delta": -5.0,
+   "date": "2026-11-21",
+   "last_date": "2026-11-21",
+   "points": [
+    {
+     "date": "2026-11-14",
+     "value": 100.0,
+     "unit": "lbs",
+     "reps": 15
+    },
+    {
+     "date": "2026-11-21",
+     "value": 95.0,
+     "unit": "lbs",
+     "reps": 15
+    }
+   ],
+   "sessions": 2
+  },
+  {
+   "id": "坐姿腿彎舉-Life-Fitness-L3",
+   "name": "坐姿腿彎舉（Life Fitness L3）",
+   "base": "坐姿腿彎舉",
+   "sub": "Life Fitness L3",
+   "section": "腿部",
+   "kind": "weight",
+   "unit": "kg",
+   "current": 25.0,
+   "reps": null,
+   "prev": null,
+   "delta": null,
+   "date": "2026-11-21",
+   "last_date": "2026-11-21",
+   "points": [
+    {
+     "date": "2026-11-21",
+     "value": 25.0,
+     "unit": "kg",
+     "reps": 13
+    }
+   ],
+   "sessions": 1
+  },
   {
    "id": "寬胸推-Hammer-Strength-Iso-Lateral-Wide-Chest-單邊",
    "name": "寬胸推（Hammer Strength Iso-Lateral Wide Chest，單邊）",
@@ -318,30 +377,6 @@
     {
      "date": "2026-11-14",
      "value": 90.0,
-     "unit": "lbs",
-     "reps": 15
-    }
-   ],
-   "sessions": 1
-  },
-  {
-   "id": "坐姿腿推-L15",
-   "name": "坐姿腿推（L15）",
-   "base": "坐姿腿推",
-   "sub": "L15",
-   "section": "腿部",
-   "kind": "weight",
-   "unit": "lbs",
-   "current": 100.0,
-   "reps": null,
-   "prev": null,
-   "delta": null,
-   "date": "2026-11-14",
-   "last_date": "2026-11-14",
-   "points": [
-    {
-     "date": "2026-11-14",
-     "value": 100.0,
      "unit": "lbs",
      "reps": 15
     }
@@ -1769,53 +1804,8 @@
  ],
  "next_training": {
   "month": "2026-11",
-  "last": "2026-11-19",
+  "last": "2026-11-21",
   "groups": [
-   {
-    "label": "腿",
-    "section": "腿部",
-    "count": 3,
-    "sets": 46,
-    "last": "2026-11-14",
-    "plan": [
-     {
-      "name": "坐姿腿推（L15）",
-      "date": "2026-11-14",
-      "sets": 3,
-      "low": 12,
-      "high": 15,
-      "weight": 95.0,
-      "unit": "lbs"
-     },
-     {
-      "name": "坐姿腿彎舉（L4）",
-      "date": "2026-11-14",
-      "sets": 3,
-      "low": 10,
-      "high": 15,
-      "weight": 43.0,
-      "unit": "kg"
-     },
-     {
-      "name": "腿伸機（L6）",
-      "date": "2026-11-14",
-      "sets": 2,
-      "low": 12,
-      "high": 15,
-      "weight": 55.0,
-      "unit": "kg"
-     },
-     {
-      "name": "站姿小腿訓練機（L1）",
-      "date": "2026-11-14",
-      "sets": 2,
-      "low": 12,
-      "high": 15,
-      "weight": 80.0,
-      "unit": "kg"
-     }
-    ]
-   },
    {
     "label": "拉",
     "section": "背部",
@@ -1914,6 +1904,51 @@
       "unit": "lbs"
      }
     ]
+   },
+   {
+    "label": "腿",
+    "section": "腿部",
+    "count": 4,
+    "sets": 56,
+    "last": "2026-11-21",
+    "plan": [
+     {
+      "name": "坐姿腿推（L15）",
+      "date": "2026-11-21",
+      "sets": 3,
+      "low": 12,
+      "high": 15,
+      "weight": 95.0,
+      "unit": "lbs"
+     },
+     {
+      "name": "坐姿腿彎舉（Life Fitness L3）",
+      "date": "2026-11-21",
+      "sets": 3,
+      "low": 10,
+      "high": 15,
+      "weight": 25.0,
+      "unit": "kg"
+     },
+     {
+      "name": "腿伸機（Gym80 T1，27001）",
+      "date": "2026-11-21",
+      "sets": 2,
+      "low": 12,
+      "high": 15,
+      "weight": null,
+      "unit": null
+     },
+     {
+      "name": "站姿小腿訓練機",
+      "date": "2026-11-21",
+      "sets": 2,
+      "low": 12,
+      "high": 15,
+      "weight": null,
+      "unit": null
+     }
+    ]
    }
   ]
  },
@@ -1926,22 +1961,22 @@
   {
    "section": "背部",
    "last": 6,
-   "prev": 21
+   "prev": 14
   },
   {
    "section": "腿部",
-   "last": 16,
-   "prev": 15
+   "last": 10,
+   "prev": 31
   },
   {
    "section": "肩部",
    "last": 12,
-   "prev": 12
+   "prev": 9
   },
   {
    "section": "手臂",
    "last": 8,
-   "prev": 9
+   "prev": 6
   },
   {
    "section": "核心",
@@ -1950,6 +1985,58 @@
   }
  ],
  "sessions": [
+  {
+   "date": "2026-11-21",
+   "parts": [
+    "腿部",
+    "核心"
+   ],
+   "sets": 13,
+   "exercises": [
+    {
+     "name": "坐姿腿彎舉（Life Fitness L3）",
+     "sets": [
+      "25 kg × 13",
+      "25 kg × 13",
+      "25 kg × 12"
+     ]
+    },
+    {
+     "name": "坐姿腿推（L15）",
+     "sets": [
+      "95 lbs × 15",
+      "95 lbs × 15",
+      "95 lbs × 15"
+     ]
+    },
+    {
+     "name": "腿伸機（Gym80 T1，27001）",
+     "sets": [
+      "55 × 14",
+      "55 × 13"
+     ]
+    },
+    {
+     "name": "站姿小腿訓練機",
+     "sets": [
+      "80 × 20",
+      "80 × 20"
+     ]
+    },
+    {
+     "name": "腹肌捲腹機（Hammer Strength MTS Abdominal Crunch）",
+     "sets": [
+      "15 × 15",
+      "17.5 × 15",
+      "20 × 15"
+     ]
+    }
+   ],
+   "vol": {
+    "kg": 950.0,
+    "lbs": 4275.0
+   }
+  },
   {
    "date": "2026-11-19",
    "parts": [
@@ -3047,6 +3134,17 @@
  ],
  "cardio": [
   {
+   "date": "2026-11-21",
+   "mode": "走步機爬坡（Matrix）",
+   "incline": 12.0,
+   "speed": 4.0,
+   "time": 61.0,
+   "km": 4.02,
+   "kcal": 514.0,
+   "pr": {},
+   "note": "4.02 km，機台估算 514 大卡，坡度與速度為平均值。腿＋核心 13 組後。"
+  },
+  {
    "date": "2026-11-19",
    "mode": "階梯機（Matrix 1 號）",
    "incline": null,
@@ -3308,10 +3406,13 @@
    "date": "2026-11-21",
    "day": "六",
    "theme": "腿 B（後側鏈）＋核心",
-   "status": "upcoming",
+   "status": "done",
    "mismatch": false,
-   "parts": [],
-   "sets": 0
+   "parts": [
+    "腿部",
+    "核心"
+   ],
+   "sets": 13
   },
   {
    "date": "2026-11-22",
